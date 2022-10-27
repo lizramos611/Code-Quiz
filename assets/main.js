@@ -1,60 +1,17 @@
-var startbtn = document.querySelector(".start")
-var timer = document.querySelector(".timer");
-var option1 = document.querySelector(".option1");
-var option2 = document.querySelector(".option2");
-var option3 = document.querySelector(".option3");
-var option4 = document.querySelector(".option4");
-var question = document.querySelector(".questions");
-var score = document.querySelector(".score");
-var allchoices = document.querySelector(".allchoices")
-
+var startbtn = document.querySelector(".start") //start button
+var timer = document.querySelector(".timer"); //timer box
+var option1 = document.querySelector(".option1"); //answer 1 box
+var option2 = document.querySelector(".option2"); // answer 2 box
+var option3 = document.querySelector(".option3"); //answer 3 box
+var option4 = document.querySelector(".option4"); //answer 4 box
+var question = document.querySelector(".questions"); // question box
+var score = document.querySelector(".score"); // score box
+var allchoices = document.querySelector(".allchoices"); // all four answer options
+var questionNumber = document.querySelector(".questionnumber"); // number user is on
 var count = 30;
-
 var timerInterval;
-
-
+var questionCount = 0; 
 var score = 0;
-
-function startQuiz() {
-    allchoices.style.display= "block";
-   
-}
-
-function gameOver() {
-    allchoices.style.display = "none";
-    score.style.display = "block";
-    console.log(score)
-    // show final score
-    score.textContent = "Your final score is :" + score ;
-    // clearInterval(timerInterval);  
-    timer.style.display = "none"; 
-}
-
-function setTime() {
-  // Sets interval in variable
-  var timerInterval = setInterval(function() {
-    count--;
-    timer.innerHTML = count;
-
-    if(count <= 0) {
-      // Stops execution of action at set interval
-      clearInterval(timerInterval);
-      timer.textContent = "time is up!";
-      gameOver();
-
-    }
-    else if(questionCount >= allQuestions.length +1) {
-        clearInterval(timerInterval);
-        gameOver();
-    }
-    
-  }, 1000);
-}
-
-
-
-
-
 const allQuestions = [
     {
         question: "Which is not a data type?",
@@ -97,6 +54,38 @@ const allQuestions = [
         answer: 3
     },
 ]
+
+function setTime() {
+
+  var timerInterval = setInterval(function() {
+    count--;
+    timer.innerHTML = count;
+
+    if(count <= 0) {
+     
+      clearInterval(timerInterval);
+      timer.textContent = "time is up!";
+      gameOver();
+
+    }
+    else if(questionCount >= allQuestions.length +1) {
+        clearInterval(timerInterval);
+        gameOver();
+    }
+    
+  }, 2000);
+}
+
+console.log(allQuestions)
+function startQuiz(){
+    startbtn.addEventListener("click", setTime())
+  
+    }
+
+startQuiz();
+
+
+
 
 
 
