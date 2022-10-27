@@ -12,7 +12,7 @@ var count = 30;
 var timerInterval;
 var questionCount = 0; 
 var score = 0;
-const allQuestions = [
+var allQuestions = [
     {
         question: "Which is not a data type?",
         option1: "string",
