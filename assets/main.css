@@ -1,0 +1,57 @@
+*{
+    background-color: black;
+    font-family: fantasy;
+    color: red;
+    border-radius: 5px;
+    margin-top: 20px;
+
+}
+
+
+.container1{
+margin: 0 auto;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 80vh;
+}
+
+.questionboxes{
+    background-color: grey;
+    padding: 50px;
+    border: 10px solid;
+    border-radius: 10px;
+}
+
+#h1{
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.allchoices{
+   padding: 10px;
+   
+
+}
+.choice1, .choice2, .choice3, .choice4{
+    margin-top: 50px;
+    background-color: red;
+    color: black;
+   width: 100%;
+   text-align: left;
+   font-size: large;
+   margin: o auto;
+   padding: 10px;
+   border: 2px solid grey;
+    
+}
+
+#questions{
+    color: whitesmoke;
+}
+
+
+.choice1:hover, .choice2:hover, .choice3:hover, .choice4:hover{
+    background-color: whitesmoke;
+}
+
