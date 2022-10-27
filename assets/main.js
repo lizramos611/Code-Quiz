@@ -1,27 +1,34 @@
 var startbtn = document.querySelector(".start") //start button
 var timer = document.querySelector(".timer"); //timer box
-var option1 = document.querySelector(".option1"); //answer 1 box
-var option2 = document.querySelector(".option2"); // answer 2 box
-var option3 = document.querySelector(".option3"); //answer 3 box
-var option4 = document.querySelector(".option4"); //answer 4 box
+var option1 = document.querySelector("#option1"); //answer 1 box
+var option2 = document.querySelector("#option2"); // answer 2 box
+var option3 = document.querySelector("#option3"); //answer 3 box
+var option4 = document.querySelector("#option4"); //answer 4 box
 var question = document.querySelector(".questions"); // question box
 var score = document.querySelector(".score"); // score box
 var allchoices = document.querySelector(".allchoices"); // all four answer options
 var questionNumber = document.querySelector(".questionnumber"); // number user is on
+
+//timer variables
 var count = 30;
 var timerInterval;
+
+//questionvariables
 var questionCount = 0; 
 var score = 0;
-var allQuestions = [
+
+const allQuestions = [
     {
+        id: 0,
         question: "Which is not a data type?",
-        option1: "string",
+        option1: "string", 
         option2: "option",
         option3: "boolean",
         option4: "number",
         answer: 2
     },
     {
+        id: 1,
         question: "How do you link a javascript page?",
         option1: "<script>",
         option2: "<html>",
@@ -30,7 +37,8 @@ var allQuestions = [
         answer: 1
     },
     {
-        question: "How do you declare a var?",
+        id: 2,
+        question: "How do you declare a variable?",
         option1: "myName",
         option2: "add",
         option3: "option",
@@ -38,6 +46,7 @@ var allQuestions = [
         answer: 4
     },
     {
+        id: 3,
         question: "How do you create a pop up window for the user?",
         option1: "var",
         option2: "document",
@@ -45,7 +54,8 @@ var allQuestions = [
         option4: "alert",
         answer: 4
     },
-    {
+    { 
+        id: 4,
         question: "Which of the following object is the main entry point to all client-side JavaScript features and APIs?",
         option1: "position",
         option2: "standard",
@@ -73,20 +83,52 @@ function setTime() {
         gameOver();
     }
     
-  }, 2000);
+  }, 1000);
 }
 
-console.log(allQuestions)
-function startQuiz(){
-    startbtn.addEventListener("click", setTime())
+//this function will start the quiz
+function startQuiz() {
+    //then i will start the timer
+    setTime();
+  //timer set then show questions & options choices
+  question.innerHTML = allQuestions[0].question;
+  option1.innerHTML = allQuestions[0].option1;
+  option2.innerHTML = allQuestions[0].option2;
+  option3.innerHTML = allQuestions[0].option3;
+  option4.innerHTML = allQuestions[0].option4;
+  currentQuestion = 0;
   
-    }
+}
 
-startQuiz();
+option1.addEventListener("click", function(event){ 
+    console.log("option1 clicked")
+})
+//checking if answer is correct or not, if correct will add to score
+function checkAnswer (userAnswer) {
 
+   
+  
+    
+}
+        
+    
+    //look at my questions array and check what my current question is and what the answer is, if it matches then score will increase.
+//once score updated
+//increment question count, then call next question 
 
+console.log(allQuestions[1].answer)
 
+option2.addEventListener("click", function(event){
+    console.log("option2 clicked")
+})
+option3.addEventListener("click", function(event){
+    console.log("option3 clicked")
+})
+option4.addEventListener("click", function(event){
+    console.log("option4 clicked")
+})
 
+startbtn.addEventListener("click", startQuiz)
 
 
 
