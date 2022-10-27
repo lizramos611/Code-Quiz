@@ -4,28 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="./js/main.js"></script>
-    <link rel="stylesheet" href="/assets/main.css">
+    <title>Javascript Quiz</title>
+    <link rel="stylesheet" href="./assets/main.css">
+    
+
 </head>
 <body>
     <div class="container1">
         <div class="questionboxes">
             <h1 id="h1">JavaScript Quiz!</h1>
-            <p id ="timer">Timer:</p>
+           
+            <button class="start" onclick="setTime(), startQuiz()">Start Quiz</button>
+
+            <p class ="timer">30</p>
+            
             <p id="questionnumber">Question x of 5</p>
-            <section class="allchoices">
-                <p id="questions">Question:</p>
-                <button class="choice1">1.</button>
+        <section class="allchoices">  
+             <p class="questions">Question:</p>
+
+                <button class="option1">answer 1</button>
                 <br>
-                <button class="choice2">2.</button>
+                <button class="option2">answer 2</button>
                 <br>
-                <button class="choice3">3.</button>
+                <button class="option3">answer 3</button>
                 <br>
-                <button class="choice4">4.</button>
+                <button class="option4">answer 4</button>
              </section>
+             <button id="highscores">High Scores</button>
+             <p class="score">Score:</p>
         </div>
     </div>
-    
+    <script src="./assets/main.js"></script>
 </body>
 </html>

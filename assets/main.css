@@ -3,17 +3,17 @@
     font-family: fantasy;
     color: red;
     border-radius: 5px;
-    margin-top: 20px;
-
 }
 
 
 .container1{
-margin: 0 auto;
+margin-top: 50px;
+padding-top: 40px;
 display: flex;
 justify-content: center;
 align-items: center;
 height: 80vh;
+
 }
 
 .questionboxes{
@@ -21,6 +21,7 @@ height: 80vh;
     padding: 50px;
     border: 10px solid;
     border-radius: 10px;
+    margin: 20px;
 }
 
 #h1{
@@ -33,7 +34,7 @@ height: 80vh;
    
 
 }
-.choice1, .choice2, .choice3, .choice4{
+.option1, .option2, .option3, .option4{
     margin-top: 50px;
     background-color: red;
     color: black;
@@ -51,7 +52,12 @@ height: 80vh;
 }
 
 
-.choice1:hover, .choice2:hover, .choice3:hover, .choice4:hover{
+.option1:hover, .option2:hover, .option3:hover, .option4:hover{
     background-color: whitesmoke;
+}
+
+
+#highscores{
+    padding: 15px;
 }
 
