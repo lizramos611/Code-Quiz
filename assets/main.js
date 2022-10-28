@@ -25,7 +25,7 @@ const allQuestions = [
         option2: "option",
         option3: "boolean",
         option4: "number",
-        answer: 2
+        answer: "option"
     },
     {
         id: 1,
@@ -34,7 +34,7 @@ const allQuestions = [
         option2: "<html>",
         option3: "<java>",
         option3: "<js>",
-        answer: 1
+        answer: "option"
     },
     {
         id: 2,
@@ -43,7 +43,7 @@ const allQuestions = [
         option2: "add",
         option3: "option",
         option4: "var",
-        answer: 4
+        answer: "option"
     },
     {
         id: 3,
@@ -52,7 +52,7 @@ const allQuestions = [
         option2: "document",
         option3: "window",
         option4: "alert",
-        answer: 4
+        answer: "option"
     },
     { 
         id: 4,
@@ -61,7 +61,7 @@ const allQuestions = [
         option2: "standard",
         option3: "window",
         option4: "location",
-        answer: 3
+        answer: "option"
     },
 ]
 
@@ -96,36 +96,40 @@ function startQuiz() {
   option2.innerHTML = allQuestions[0].option2;
   option3.innerHTML = allQuestions[0].option3;
   option4.innerHTML = allQuestions[0].option4;
-  currentQuestion = 0;
+  
   
 }
 
-option1.addEventListener("click", function(event){ 
-    console.log("option1 clicked")
-})
+
 //checking if answer is correct or not, if correct will add to score
 function checkAnswer (userAnswer) {
-
-   
-  
-    
+ var correctAnswer = option1.innertext
 }
-        
-    
+
+console.log(checkAnswer);
     //look at my questions array and check what my current question is and what the answer is, if it matches then score will increase.
 //once score updated
 //increment question count, then call next question 
 
-console.log(allQuestions[1].answer)
-
-option2.addEventListener("click", function(event){
-    console.log("option2 clicked")
+option1.addEventListener("click", function(event){
+    
+    console.log(option1.innerText)
 })
+option2.addEventListener("click", function(event){
+    
+    console.log(option2.innerText)
+
+})
+
 option3.addEventListener("click", function(event){
-    console.log("option3 clicked")
+    
+    console.log(option3.innerText)
+
 })
 option4.addEventListener("click", function(event){
-    console.log("option4 clicked")
+    
+    console.log(option4.innerText)
+
 })
 
 startbtn.addEventListener("click", startQuiz)
