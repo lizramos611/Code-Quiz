@@ -7,15 +7,16 @@ var option4 = document.querySelector("#option4"); //answer 4 box
 var question = document.querySelector(".questions"); // question box
 var score = document.querySelector(".score"); // score box
 var allchoices = document.querySelector(".allchoices"); // all four answer options
-var questionNumber = document.querySelector(".questionnumber"); // number user is on
-
+var questionNumberEl = document.querySelector("#question-number"); // number user is on
+var score = document.querySelector("#score")
 //timer variables
 var count = 30;
 var timerInterval;
 
 //questionvariables
-var questionCount = 0; 
-var score = 0;
+var questionCount = 1; 
+var questionNumber = 0;
+
 
 const allQuestions = [
     {
@@ -85,54 +86,66 @@ function setTime() {
     
   }, 1000);
 }
-
+function nextQuestion () {
+    question.innerHTML = allQuestions[questionNumberEl-1].question;
+    option1.innerHTML = allQuestions[questionNumberEl-1].option1;
+    option2.innerHTML = allQuestions[questionNumberEl-1].option2;
+    option3.innerHTML = allQuestions[questionNumber-1].option3;
+    option4.innerHTML = allQuestions[questionNumber-1].option4;
+}
 //this function will start the quiz
 function startQuiz() {
     //then i will start the timer
     setTime();
   //timer set then show questions & options choices
-  question.innerHTML = allQuestions[0].question;
-  option1.innerHTML = allQuestions[0].option1;
-  option2.innerHTML = allQuestions[0].option2;
-  option3.innerHTML = allQuestions[0].option3;
-  option4.innerHTML = allQuestions[0].option4;
-  
+  nextQuestion();
   
 }
 
+
+startbtn.addEventListener("click", startQuiz)
 
 //checking if answer is correct or not, if correct will add to score
 function checkAnswer (userAnswer) {
- var correctAnswer = option1.innertext
+if (userAnswer === allQuestions[questionNumberEl -1].answer) {
+    score++;
+     alert("correct!");
+     
+}
+ else {
+    score--;
+    alert("wrong!");
+    
+ }
+questionNumber++;
+nextQuestion();
 }
 
-console.log(checkAnswer);
+
     //look at my questions array and check what my current question is and what the answer is, if it matches then score will increase.
 //once score updated
 //increment question count, then call next question 
-
 option1.addEventListener("click", function(event){
-    
+    checkAnswer(event.target.innerText)
     console.log(option1.innerText)
 })
 option2.addEventListener("click", function(event){
     
+    checkAnswer(event.target.innerText)
     console.log(option2.innerText)
 
 })
 
 option3.addEventListener("click", function(event){
-    
+    checkAnswer(event.target.innerText)
     console.log(option3.innerText)
 
 })
 option4.addEventListener("click", function(event){
-    
+    checkAnswer(event.target.innerText)
     console.log(option4.innerText)
 
 })
-
-startbtn.addEventListener("click", startQuiz)
 
 
 
